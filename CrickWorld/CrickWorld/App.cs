@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using CrickWorld.Views;
 using Xamarin.Forms;
 
 namespace CrickWorld
@@ -17,17 +17,12 @@ namespace CrickWorld
                 Title = "CrickWorld",
                 Content = new StackLayout
                 {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
+                   
+                  
                 }
             };
 
-            MainPage = new NavigationPage(content);
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
