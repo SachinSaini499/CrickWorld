@@ -12,16 +12,16 @@ namespace CrickWorld
         public App()
         {
             // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "CrickWorld",
-                Content = new StackLayout
-                {
-                   
-                  
-                }
-            };
+            //var content = new ContentPage
+            //{
+            //    Title = "CrickWorld",
+            //    Content = new StackLayout
+            //    {
 
+
+            //    }
+            //};
+          //  InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
         }
 

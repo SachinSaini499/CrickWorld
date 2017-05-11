@@ -2,16 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CrickWorld.Views.SignUp"
-             xmlns:viewModel="clr-namespace:CrickWorld.ViewModel;assembly=CrickWorld">
+             xmlns:ViewModels="clr-namespace:CrickWorld.ViewModel">
     <ContentPage.BindingContext>
-        <viewModel:UserViewModel/>
+        <ViewModels:UserViewModel/>
     </ContentPage.BindingContext>
-    
-	<StackLayout>
-        <Entry Placeholder="UserNmae" Text="{Binding }"></Entry>
-        <Entry   Placeholder="Password"></Entry>
-        <Entry  Placeholder="Phone Number" ></Entry>
-        <Button Text="Submit" Clicked="Button_OnClicked"></Button>
+    <ContentPage.Content>
+	<StackLayout Orientation="Vertical" Spacing="18">
 
-    </StackLayout>
+            <Entry Placeholder="Name" Text="{Binding SelectedUser.UserName,Mode=TwoWay}"></Entry>
+            <Entry   Placeholder="Password" Text="{Binding SelectedUser.Password,Mode=TwoWay}"></Entry>
+            <Entry  Placeholder="Phone Number" Text="{Binding SelectedUser.PhoneNumber,Mode=TwoWay}"></Entry>
+
+            <Button Text="Submit" x:Name="btnSubmit" Command="{Binding PostCommand2}"></Button>
+        </StackLayout>
+    
+    </ContentPage.Content>
 </ContentPage>

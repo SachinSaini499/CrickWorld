@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrickWorld.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,15 @@ namespace CrickWorld.Views
         public SignUp()
         {
             InitializeComponent();
+            //BindingContext = new UserDetails();
         }
 
-        private void Button_OnClicked(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+    //async    private void Button_OnClicked(object sender, EventArgs e)
+    //    {
+    //        var userServices = new UserServices();
+    //        UserDetails userDetail = BindingContext as UserDetails;
+    //        await userServices.postUsersAsync(userDetail);
+    //        // throw new NotImplementedException();
+    //    }
     }
 }

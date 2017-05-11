@@ -15,9 +15,9 @@ namespace CrickWorld.Views
             InitializeComponent();
         }
 
-        private void Button_OnClicked(object sender, EventArgs e)
+      async  private void Button_OnClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUp());
+           await Navigation.PushAsync(new SignUp());
         }
     }
 }

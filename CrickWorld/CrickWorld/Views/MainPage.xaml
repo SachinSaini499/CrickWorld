@@ -1,23 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-              xmlns:local="clr-namespace:CrickWorld;"
-              xmlns:ViewModels="clr-namespace:CrickWorld.ViewModels;"
-             x:Class="CrickWorld.Views.MainPage"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"           
+             x:Class="CrickWorld.Views.MainPage">
+    <!--xmlns:viewModel="clr-namespace:CrickWorld.ViewModel"-->
             
-             >
-    <ContentPage.BindingContext>
-        <ViewModels:UserViewModel/>
-    </ContentPage.BindingContext>
+             
+    <!--<ContentPage.BindingContext>
+        <viewModel:UserViewModel/>
+    </ContentPage.BindingContext>-->
     
     <StackLayout>
-        <Button Text="Sign UP" Clicked="Button_OnClicked" ></Button>
-    <ListView ItemsSource="{Binding userList}">
+    <Button Text="Sign UP" Clicked="Button_OnClicked" ></Button>
+    <!--<ListView ItemsSource="{Binding userList}">
      <ListView.ItemTemplate>
          <DataTemplate>
             <ViewCell>
-                    <Label Text="{UserName}"></Label>
-                    <Label Text="{PhoneNumber}"></Label>
+                    <Label Text="{Binding UserName}"></Label>
+                    <Label Text="{Binding PhoneNumber}"></Label>
 
                 </ViewCell>
                  
@@ -25,6 +24,6 @@
 
             </DataTemplate>
      </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
     </StackLayout>
 </ContentPage>

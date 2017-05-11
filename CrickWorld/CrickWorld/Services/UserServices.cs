@@ -18,5 +18,12 @@ namespace CrickWorld
             return lstUser;
         }
 
+        async public Task postUsersAsync(UserDetails userDetails)
+        {
+            RestClient<UserDetails> restClient = new RestClient<UserDetails>();
+            var lstUser = await restClient.PostAsync(userDetails);
+            //return lstUser;
+        }
+
     }
 }
