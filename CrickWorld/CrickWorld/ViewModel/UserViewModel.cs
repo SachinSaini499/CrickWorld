@@ -16,6 +16,8 @@ namespace CrickWorld.ViewModel
         private List<UserDetails> _userList;
         private UserDetails _selectedUser = new UserDetails();
         public event PropertyChangedEventHandler PropertyChanged;
+        private bool _isBusy=false;
+        private string _statusMessage=null;
 
         public List<UserDetails> userList
         {
@@ -35,20 +37,46 @@ namespace CrickWorld.ViewModel
                 OnPropertyChanged();
             }
         }
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value; 
+                OnPropertyChanged();
+            }
+        }
+
+        public string StatusMessage
+        {
+            get { return _statusMessage; }
+            set { _statusMessage=value;
+                OnPropertyChanged();
+            }
+        }
+
         public UserViewModel()
         {
-             InitiliseDataAsync();
+            InitiliseDataAsync();
 
         }
 
         public Command PostCommand2
         {
             get
-            { 
-                return new Command(async() => {
-
+            {
+                return new Command(async () =>
+                {
+                    IsBusy = true;
                     var userServices = new UserServices();
-                   await userServices.postUsersAsync(_selectedUser);
+                    var IsSuccess= await userServices.postUsersAsync(_selectedUser);
+
+                    if (IsSuccess)
+                    { StatusMessage = "Add Susseccfully"; }
+                    else
+                    { StatusMessage = "Sorry! Something went wronge."; }
+                    IsBusy = false;
+
                 });
             }
 
@@ -56,8 +84,10 @@ namespace CrickWorld.ViewModel
 
         private async Task InitiliseDataAsync()
         {
+            IsBusy = true;
             var userServices = new UserServices();
             userList = await userServices.GetUsersAsync();
+            IsBusy = false;
         }
 
         [NotifyPropertyChangedInvocator]

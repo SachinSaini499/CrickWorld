@@ -8,12 +8,16 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 	<StackLayout Orientation="Vertical" Spacing="18">
-
+            
             <Entry Placeholder="Name" Text="{Binding SelectedUser.UserName,Mode=TwoWay}"></Entry>
             <Entry   Placeholder="Password" Text="{Binding SelectedUser.Password,Mode=TwoWay}"></Entry>
             <Entry  Placeholder="Phone Number" Text="{Binding SelectedUser.PhoneNumber,Mode=TwoWay}"></Entry>
 
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
+        
             <Button Text="Submit" x:Name="btnSubmit" Command="{Binding PostCommand2}"></Button>
+
+            <Label Text="{Binding StatusMessage,Mode=TwoWay}" IsVisible="True" FontSize="20" TextColor="Green"></Label>
         </StackLayout>
     
     </ContentPage.Content>

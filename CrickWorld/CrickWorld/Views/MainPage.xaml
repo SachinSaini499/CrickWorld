@@ -11,6 +11,7 @@
 
     <StackLayout Orientation="Vertical" Spacing="20" >
         <Button Text="Sign UP" Clicked="Button_OnClicked" ></Button>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"></ActivityIndicator>
         <ListView ItemsSource="{Binding userList}">
             <ListView.ItemTemplate>
                 <DataTemplate>

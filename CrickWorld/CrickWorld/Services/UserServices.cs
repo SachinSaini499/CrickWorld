@@ -13,16 +13,17 @@ namespace CrickWorld
 
         async public Task<List<UserDetails>> GetUsersAsync()
         {
+
             RestClient<UserDetails> restClient=new RestClient<UserDetails>();
             var lstUser = await restClient.GetAsync();
             return lstUser;
         }
 
-        async public Task postUsersAsync(UserDetails userDetails)
+        async public Task<bool> postUsersAsync(UserDetails userDetails)
         {
             RestClient<UserDetails> restClient = new RestClient<UserDetails>();
-            var lstUser = await restClient.PostAsync(userDetails);
-            //return lstUser;
+            bool isSuccessPost = await restClient.PostAsync(userDetails);
+            return isSuccessPost;
         }
 
     }
