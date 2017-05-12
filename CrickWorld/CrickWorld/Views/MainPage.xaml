@@ -1,29 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"           
-             x:Class="CrickWorld.Views.MainPage">
-    <!--xmlns:viewModel="clr-namespace:CrickWorld.ViewModel"-->
-            
-             
-    <!--<ContentPage.BindingContext>
+             x:Class="CrickWorld.Views.MainPage"
+    xmlns:viewModel="clr-namespace:CrickWorld.ViewModel">
+
+
+    <ContentPage.BindingContext>
         <viewModel:UserViewModel/>
-    </ContentPage.BindingContext>-->
-    
-    <StackLayout>
-    <Button Text="Sign UP" Clicked="Button_OnClicked" ></Button>
-    <!--<ListView ItemsSource="{Binding userList}">
-     <ListView.ItemTemplate>
-         <DataTemplate>
-            <ViewCell>
-                    <Label Text="{Binding UserName}"></Label>
-                    <Label Text="{Binding PhoneNumber}"></Label>
+    </ContentPage.BindingContext>
 
-                </ViewCell>
-                 
-                
-
-            </DataTemplate>
-     </ListView.ItemTemplate>
-    </ListView>-->
+    <StackLayout Orientation="Vertical" Spacing="20" >
+        <Button Text="Sign UP" Clicked="Button_OnClicked" ></Button>
+        <ListView ItemsSource="{Binding userList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="DumyImage.jpg" Text="{Binding UserName}" Detail="{Binding PhoneNumber}"></ImageCell>
+                    <!--<ViewCell>
+                        <Label x:Name="lblName" Text="{Binding UserName}"></Label>
+                        <Label x:Name="lblPhoneNumber" Text="{Binding PhoneNumber}"></Label>
+                    </ViewCell>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>

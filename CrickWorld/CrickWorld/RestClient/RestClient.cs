@@ -14,7 +14,7 @@ namespace Plugin.RestClient
     public class RestClient<T>
     {
         //private const string WebServiceUrl = "http://taskmodel.azurewebsites.net/api/TaskModels/";
-        private const string WebServiceUrl = "http://ucbackendapp.azurewebsites.net/api/UserDetails/";
+        private const string WebServiceUrl = "http://uc365app.azurewebsites.net/api/UserDetails/";
         public async Task<List<T>> GetAsync()
         {
             var httpClient = new HttpClient();
